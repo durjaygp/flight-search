@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function showSearchForm(){
         return view('index');
     }
     public function swap(){
@@ -27,17 +27,16 @@ class HomeController extends Controller
         ]);
 
         // Redirect to the result page
-        return redirect()->route('swap');
+        return redirect()->route('flight.result');
     }
 
     public function showResult(Request $request)
     {
-        // Retrieve the search data from the session
-        $flightSearch = $request->session()->get('index');
+        $flightSearch = $request->session()->get('flight.result');
 
-        $results = []; // Replace this with the results of your search query
+        $results = [];
 
-        return view('swap', ['results' => $results]);
+        return view('swap', ['results' => $results], compact('flightSearch'));
     }
 
 }

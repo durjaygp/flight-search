@@ -17,7 +17,7 @@
   <div class="container">
     <h1 class="text-center mb-4">Flight Search Results</h1>
     <div class="mb-3">
-        @if (count($results) > 0)
+        @if (count($results) > 1)
             <h3>Flight Details:</h3>
             <ul>
                 @foreach ($results as $flight)
@@ -29,6 +29,7 @@
                 @endforeach
             </ul>
         @else
+        @endif
     </div>
 
     <form id="seat-selection-form">

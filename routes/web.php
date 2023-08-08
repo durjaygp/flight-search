@@ -18,9 +18,9 @@ use App\Http\Controllers\FlightController;
 //    return view('welcome');
 //});
 
-Route::get('/',[HomeController::class,'index'])->name('home');
-Route::get('/swap',[HomeController::class,'swap'])->name('swap');
+//Route::get('/',[HomeController::class,'index'])->name('home');
+//Route::get('/swap',[HomeController::class,'swap'])->name('swap');
 
-Route::get('/flight/search', [HomeController::class, 'showSearchForm'])->name('flight.search');
+Route::get('/flight/search', [HomeController::class, 'showSearchForm'])->name('flight.result');
 Route::post('/flight/search', [HomeController::class, 'search']);
 Route::get('/flight/result', [HomeController::class, 'showResult'])->name('flight.result');
